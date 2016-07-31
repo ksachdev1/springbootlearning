@@ -36,13 +36,13 @@ public class Oauth2AuthorizationServerConfig extends AuthorizationServerConfigur
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 
-//        clients.jdbc(dataSource);
-        clients.inMemory()
-                .withClient("ksclient")
-                .secret("top_secret")
-                .authorizedGrantTypes("password","authorization_code", "refresh_token")
-                .scopes("read", "write")
-                .resourceIds("ksclientid");
+        clients.jdbc(dataSource);
+//        clients.inMemory()
+//                .withClient("ksclient")
+//                .secret("top_secret")
+//                .authorizedGrantTypes("password","authorization_code", "refresh_token")
+//                .scopes("read", "write")
+//                .resourceIds("ksclientid");
 //                .accessTokenValiditySeconds(30);
     }
 
